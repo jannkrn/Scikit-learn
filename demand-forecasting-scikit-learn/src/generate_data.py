@@ -20,4 +20,4 @@ df["demand"] = (
     + np.random.normal(0, 20, n)
 ).round()
 
-df.to_csv("C:\Jann\Python\Scikit-learn\Erstes Projekt\Data\demand_data.csv", index=False)
+df.to_csv("Data/demand_data.csv", index=False)
