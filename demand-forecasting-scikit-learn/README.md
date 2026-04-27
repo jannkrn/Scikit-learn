@@ -26,4 +26,6 @@ The model is evaluated using:
 
 ```bash
 pip install -r requirements.txt
+python src/generate_data.py
 python src/train_model.py
+python src/predict.py
