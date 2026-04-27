@@ -1,18 +1,14 @@
+from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 
-# Eingabedaten X müssen zweidimensional sein
-X = [[1], [2], [3], [4], [5]]
+X = [[1], [2], [3], [4], [5], [6], [7], [8]]
+y = [10, 20, 30, 40, 50, 60, 70, 80]
 
-# Zielwerte y
-y = [10, 20, 30, 40, 50]
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.25, random_state=42
+)
 
-# Modell erstellen
 model = LinearRegression()
+model.fit(X_train, y_train)
 
-# Modell trainieren
-model.fit(X, y)
-
-# Vorhersage für neuen Wert
-prediction = model.predict([[6]])
-
-print(prediction)
+print(model.score(X_test, y_test))
