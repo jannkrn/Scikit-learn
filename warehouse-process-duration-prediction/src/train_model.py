@@ -18,16 +18,16 @@ def main():
     categorical_features = ["warehouse_area", "shift"]
 
     numeric_features = [
-        "order_lines",
-        "total_items",
+        "order_lines", # different products 
+        "total_items", 
         "weekday",
         "employee_experience_years",
-        "priority_order"
+        "priority_order" # 0 for regular orders, 1 for priority orders
     ]
 
-    preprocessor = ColumnTransformer(
+    preprocessor = ColumnTransformer( 
         transformers=[
-            ("cat", OneHotEncoder(handle_unknown="ignore"), categorical_features),
+            ("cat", OneHotEncoder(handle_unknown="ignore"), categorical_features), 
             ("num", "passthrough", numeric_features)
         ]
     )
